@@ -14,7 +14,7 @@ export function uniqueQueue(onAir, queued) {
   const seen = new Set();
   for (const track of [onAir, ...queued]) {
     if (seen.has(track.uri)) continue;
-    seen.add(track.uri);
+    seen.add(track.title);
     result.push(track);
   }
   return result;
