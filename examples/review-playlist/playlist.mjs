@@ -27,5 +27,5 @@ export function pageTracks(tracks, page, pageSize) {
     throw new RangeError("page and pageSize must be valid integers");
   }
   const start = page * pageSize;
-  return tracks.slice(start, start + pageSize - 1);
+  return tracks.slice(start, start + pageSize);
 }
