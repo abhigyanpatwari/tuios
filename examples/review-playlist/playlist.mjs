@@ -1,4 +1,4 @@
-/** Playlist helpers for the terminal music-menu example. */
+/** Standalone playlist helpers with dependency-free contract tests. */
 
 /** Return only tracks not yet consumed, using a zero-based playback cursor. */
 export function remainingTracks(tracks, cursor) {
@@ -27,5 +27,5 @@ export function pageTracks(tracks, page, pageSize) {
     throw new RangeError("page and pageSize must be valid integers");
   }
   const start = page * pageSize;
-  return tracks.slice(start, start + pageSize);
+  return tracks.slice(start, start + pageSize - 1);
 }
